@@ -1,1 +1,164 @@
-# Styled Components Themimg
+import { ThemeProvider } from 'styled-components';
+import Button from 'src/components/Button';
+import StyledButton from 'src/components/StyledButton';
+import ThemedButton from 'src/components/ThemedButton';
+import ThemedContainer from 'src/components/ThemedContainer';
+import { theme } from 'src/themes';
+import { darkTheme } from 'src/themes/dark';
+import { syntaxHighlighter } from 'mdx-deck/themes';
+
+export const themes = [syntaxHighlighter, {
+  css: {
+    fontSize: 18,
+  }
+}];
+
+# Styled Components Theming
+
+---
+
+## A `<button/>`
+
+```jsx
+<button>Hello World!</button>
+```
+
+<button style={{ fontSize: 48 }}>Hello World!</button>
+
+---
+
+## CSS
+
+```css
+input[type="button"],
+input[type="submit"] {
+  color: white;
+  background: purple;
+  padding: 0.5em;
+  border: 0;
+  border-radius: 0.25em;
+  cursor: pointer;
+  position: relative;
+  transition: 0.2s;
+  -webkit-appearance: none;
+}
+
+```
+
+---
+
+## A `<Button/>`
+
+```jsx
+const Button = ({ children, ...props }) =>
+  <button {...props}>{children}</button>
+
+<Button>Hello World!</Button>
+```
+
+<Button style={{ fontSize: 48 }}>Hello World!</Button>
+
+---
+
+## A Simple Theme
+
+```js
+export const theme = {
+  colors: {
+    bg: '#f8f0f8',
+    text: '#101',
+    brand: '#8601bf',
+    label: '#f8f0f8',
+  }
+};
+```
+
+---
+
+e A `<StyledButton/>`
+
+```jsx
+import styled from 'styled-components';
+
+const StyledButton = styled.button`
+  color: #f8f0f8;
+  background: #8601bf;
+  ...
+`;
+
+export default StyledButton;
+```
+
+---
+
+## A `<StyledButton/>`
+
+```jsx
+<StyledButton>Hello World!</StyledButton>
+```
+
+<StyledButton>Hello World!</StyledButton>
+
+---
+
+## A `<ThemedButton/>`
+
+```jsx
+const ThemedButton = styled.button`
+  color: ${p => p.theme.colors.white};
+  background: ${p => p.theme.colors.brand};
+`;
+
+export default ThemedButton;
+```
+
+---
+
+## A Themed `<ThemedButton/>`
+
+```jsx
+import theme from 'src/themes';
+
+<ThemeProvider theme={theme}>
+  <ThemedButton>Hello World!</ThemedButton>
+</ThemeProvider>
+```
+<ThemeProvider theme={theme}>
+  <ThemedContainer>
+    <ThemedButton>Hello World!</ThemedButton>
+  </ThemedContainer>
+</ThemeProvider>
+
+---
+
+## A Dark Theme
+
+```js
+export const darkTheme = {
+  colors: {
+    bg: '#101',
+    text: '#f8f0f8',
+    brand: '#8601bf',
+    label: '#101',
+  }
+};
+```
+
+---
+
+## A Dark Themed `<ThemedButton/>`
+
+```jsx
+import theme from 'src/themes';
+
+<ThemeProvider theme={darkTheme}>
+  <ThemedButton>Hello World!</ThemedButton>
+</ThemeProvider>
+```
+<ThemeProvider theme={darkTheme}>
+  <ThemedContainer>
+    <ThemedButton>Hello World!</ThemedButton>
+  </ThemedContainer>
+</ThemeProvider>
+
+---
