@@ -15,11 +15,11 @@ const ThemedButton = styled.button`
 
   &:hover {
     top: -0.1rem;
-    box-shadow: 0 0.2em 0.5em black;
+    box-shadow: 0 0.2em 0.5em rgba(127, 127, 127, 0.5);
   }
   &:active {
     top: 0;
-    box-shadow: 0 0.1em 0.3em black;
+    box-shadow: 0 0.1em 0.3em rgba(127, 127, 127, 0.5);
   }
 `;
 
