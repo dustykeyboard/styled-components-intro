@@ -1,0 +1,29 @@
+{
+  "name": "styled-components-intro",
+  "version": "1.0.0",
+  "description": "Styled Components Theming Intro",
+  "main": "index.js",
+  "dependencies": {
+    "mdx-deck": "^2.0.6",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-syntax-highlighter": "^10.2.1",
+    "styled-components": "^4.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "mdx-deck slides.mdx",
+    "build": "mdx-deck pdf slides.mdx"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dustykeyboard/styled-components-intro.git"
+  },
+  "author": "Philip Boardman <dustykeyboard@brd.mn>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dustykeyboard/styled-components-intro/issues"
+  },
+  "homepage": "https://github.com/dustykeyboard/styled-components-intro#readme"
+}
