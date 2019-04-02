@@ -1,51 +1,67 @@
 import { ThemeProvider } from 'styled-components';
-import StyledButton from 'src/components/StyledButton';
+import StyledButton, {buttonStyle} from 'src/components/StyledButton';
 import ThemedButton from 'src/components/ThemedButton';
 import ThemedContainer from 'src/components/ThemedContainer';
 import defaultTheme from 'src/themes';
 import darkTheme from 'src/themes/dark';
-import { syntaxHighlighter } from 'mdx-deck/themes';
+import { hack, syntaxHighlighterPrism } from 'mdx-deck/themes';
 
-export const themes = [syntaxHighlighter];
+export const themes = [hack, syntaxHighlighterPrism];
 
-# Styled Components
-## Theming
+# Theming
+# `<StyledComponents/>`
 
-Philip Boardman
-* Twitter: [@pbrdmn](https://twitter.com/pbrdmn)
-* GitHub: [/dustykeyboard](https://github.com/dustykeyboard)
+// Philip Boardman
 
 ---
 
-## A `<button/>`
+## `<button/>`
 
 ```jsx
 <button>Hello World!</button>
 ```
 
+---
+
 <button>Hello, button</button>
 
 ---
 
-## CSS
+## CSS `<button/>`
 
 ```css
-.button {
+button {
   color: white;
-  background: purple;
+  background: #8601bf;
   padding: 0.5em;
   border: 0;
   border-radius: 0.25em;
 }
 ```
+
+```html
+<button>Hello, CSS</button>
+```
+
 ---
 
-## CSS in JS
+<button style={{
+  fontSize: '48px',
+  color: '#f8f0f8',
+  background: '#8601bf',
+  padding: '0.5em',
+  border: 0,
+  borderRadius: '0.25em',
+}}>Hello, CSS</button>
+
+---
+
+## CSS in JS `<button />`
 
 ```jsx
 <button style={{
-  color: 'white',
-  background: 'purple',
+  color: '#f8f0f8',
+  background: '#8601bf',
   padding: '0.5em',
   border: 0,
   borderRadius: '0.25em',
@@ -54,35 +70,34 @@ Philip Boardman
 
 ---
 
-## A styled Button
-
 <button style={{
   fontSize: '48px',
-  color: 'white',
-  background: 'purple',
+  color: '#f8f0f8',
+  background: '#8601bf',
   padding: '0.5em',
   border: 0,
   borderRadius: '0.25em',
-}}>Hello, button</button>
+}}>Hello, CSS in JS</button>
 
 ---
 
 ## Styled Component CSS
 
 ```js
-const buttonStyle = css`
-  color: white;
-  background: purple;
+import { css } from 'styled-components';
+
+const buttonStyle = styled.css`
+  color: #f8f0f8;
+  background: #8601bf;
   padding: 0.5em;
   border: 0;
   border-radius: 0.25em;
-  -webkit-appearance: none;
 `;
 ```
 
 ---
 
-## A `<StyledButton/>`
+## `<StyledButton/>`
 
 ```jsx
 import styled from 'styled-components';
@@ -91,12 +106,12 @@ const StyledButton = styled.button`
   color: #f8f0f8;
   background: #8601bf;
   ...
+  $​{buttonStyle}
 `;
+*/
 ```
 
 ---
-
-## A `<StyledButton/>`
 
 <StyledButton>Hello, StyledButton</StyledButton>
 
@@ -118,12 +133,12 @@ export default defaultTheme;
 
 ---
 
-## A `<ThemedButton/>`
+## `<ThemedButton/>`
 
 ```jsx
-const ThemedButton = styled.button`
-  color: ${p => p.theme.colors.label};
-  background: ${p => p.theme.colors.brand};
+const ThemedButton = styled(StyledButton)`
+  color: $​{p => p.theme.colors.label};
+  background: $​{p => p.theme.colors.brand};
 `;
 
 export default ThemedButton;
@@ -134,17 +149,15 @@ export default ThemedButton;
 ## Theming a `<ThemedButton/>`
 
 ```jsx
-import defaultTheme from 'src/themes';
+import theme from 'src/themes';
 
-<ThemeProvider theme={defaultTheme}>
+<ThemeProvider theme={theme}>
   <p>A light theme</p>
   <ThemedButton>Hello Button!</ThemedButton>
 </ThemeProvider>
 ```
 
 ---
-
-## A Themed `<ThemedButton/>`
 
 <ThemeProvider theme={defaultTheme}>
   <ThemedContainer>
@@ -171,7 +184,7 @@ export default darkTheme;
 
 ---
 
-## Theming Another `<ThemedButton/>`
+## A Dark Themed `<ThemedButton/>`
 
 ```jsx
 import darkTheme from 'src/themes/dark';
@@ -184,7 +197,6 @@ import darkTheme from 'src/themes/dark';
 
 ---
 
-## A Dark Themed `<ThemedButton/>`
 <ThemeProvider theme={darkTheme}>
   <ThemedContainer>
     <p>A dark theme</p>
