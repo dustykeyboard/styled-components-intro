@@ -5,6 +5,8 @@ const ThemedContainer = styled.div`
   color: ${p => p.theme.colors.text};
   background: ${p => p.theme.colors.bg};
   padding: 1em;
+  min-width: 80vw;
+  min-height: 80vh;
 `;
 
 export default ThemedContainer;
