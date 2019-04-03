@@ -18,7 +18,7 @@ export const themes = [hack, syntaxHighlighterPrism];
 ## `<button/>`
 
 ```jsx
-<button>Hello World!</button>
+<button>Hello, button</button>
 ```
 
 ---
@@ -32,7 +32,7 @@ export const themes = [hack, syntaxHighlighterPrism];
 ```css
 button {
   color: white;
-  background: #8601bf;
+  background: #8a24c2;
   padding: 0.5em;
   border: 0;
   border-radius: 0.25em;
@@ -48,7 +48,7 @@ button {
 <button style={{
   fontSize: '48px',
   color: '#f8f0f8',
-  background: '#8601bf',
+  background: '#8a24c2',
   padding: '0.5em',
   border: 0,
   borderRadius: '0.25em',
@@ -61,11 +61,11 @@ button {
 ```jsx
 <button style={{
   color: '#f8f0f8',
-  background: '#8601bf',
+  background: '#8a24c2',
   padding: '0.5em',
   border: 0,
   borderRadius: '0.25em',
-}}>Hello, button</button>
+}}>Hello, CSS in JS</button>
 ```
 
 ---
@@ -73,7 +73,7 @@ button {
 <button style={{
   fontSize: '48px',
   color: '#f8f0f8',
-  background: '#8601bf',
+  background: '#8a24c2',
   padding: '0.5em',
   border: 0,
   borderRadius: '0.25em',
@@ -88,7 +88,7 @@ import { css } from 'styled-components';
 
 const buttonStyle = styled.css`
   color: #f8f0f8;
-  background: #8601bf;
+  background: #8a24c2;
   padding: 0.5em;
   border: 0;
   border-radius: 0.25em;
@@ -97,18 +97,27 @@ const buttonStyle = styled.css`
 
 ---
 
-## `<StyledButton/>`
+## Styled Component `<button>`
 
 ```jsx
 import styled from 'styled-components';
 
 const StyledButton = styled.button`
   color: #f8f0f8;
-  background: #8601bf;
+  background: #8a24c2;
   ...
   $​{buttonStyle}
 `;
-*/
+```
+
+---
+
+## `<StyledButton/>`
+
+```jsx
+<StyledButton>
+  Hello, StyledButton
+</StyledButton>
 ```
 
 ---
@@ -124,7 +133,7 @@ const defaultTheme = {
   colors: {
     bg: '#f8f0f8',
     text: '#101',
-    brand: '#8601bf',
+    brand: '#8a24c2',
     label: '#f8f0f8',
   }
 };
@@ -153,7 +162,9 @@ import theme from 'src/themes';
 
 <ThemeProvider theme={theme}>
   <p>A light theme</p>
-  <ThemedButton>Hello Button!</ThemedButton>
+  <ThemedButton>
+    Hello, ThemedButton
+  </ThemedButton>
 </ThemeProvider>
 ```
 
@@ -162,7 +173,9 @@ import theme from 'src/themes';
 <ThemeProvider theme={defaultTheme}>
   <ThemedContainer>
     <p>A light theme</p>
-    <ThemedButton>Hello Button!</ThemedButton>
+    <ThemedButton>
+      Hello, ThemedButton
+    </ThemedButton>
   </ThemedContainer>
 </ThemeProvider>
 
@@ -174,8 +187,8 @@ import theme from 'src/themes';
 const darkTheme = {
   colors: {
     bg: '#101',
-    text: '#f8f0f8',
-    brand: '#8601bf',
+    text: '#cebbce',
+    brand: '#8a24c2',
     label: '#101',
   }
 };
@@ -191,7 +204,9 @@ import darkTheme from 'src/themes/dark';
 
 <ThemeProvider theme={darkTheme}>
   <p>A dark theme</p>
-  <ThemedButton>Hello World!</ThemedButton>
+  <ThemedButton>
+    Hello, Darkness
+  </ThemedButton>
 </ThemeProvider>
 ```
 
@@ -200,7 +215,9 @@ import darkTheme from 'src/themes/dark';
 <ThemeProvider theme={darkTheme}>
   <ThemedContainer>
     <p>A dark theme</p>
-    <ThemedButton>Hello World!</ThemedButton>
+    <ThemedButton>
+      Hello, Darkness
+    </ThemedButton>
   </ThemedContainer>
 </ThemeProvider>
 
