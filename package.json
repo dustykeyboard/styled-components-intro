@@ -4,18 +4,18 @@
   "description": "Styled Components Theming Intro",
   "main": "index.js",
   "dependencies": {
-    "mdx-deck": "^2.0.6",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-syntax-highlighter": "^10.2.1",
-    "styled-components": "^4.2.0"
+    "mdx-deck": "^3.0.10",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-syntax-highlighter": "^11.0.2",
+    "styled-components": "^4.3.2"
   },
   "devDependencies": {
-    "eslint": "^5.16.0",
-    "eslint-config-airbnb": "^17.1.0",
-    "eslint-plugin-import": "^2.16.0",
-    "eslint-plugin-jsx-a11y": "^6.2.1",
-    "eslint-plugin-react": "^7.12.4"
+    "eslint": "^6.3.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.14.3"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
